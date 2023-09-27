@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    border: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: transparent;
+    color: rgb(9, 8, 8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1;
+}
+.nav-item a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+  
+  
+.navbar.scrolled {
+    background-color: rgb(12, 11, 11);
+    color: black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.navbar.scrolled .nav-item a {
+    color: rgb(255, 255, 255);
+}
+  
+.nav-item a:hover {
+    transform: scale(1.1);
+}
+
+@keyframes fadeInDown {
+    0% {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+  
+.nav-item {
+    animation: fadeInLeft 0.6s ease-out;
+}
+
+.account-body{
+    height: 900px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account{
+    height: 500px;
+    width: 650px;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+}
+
+.Sign{
+    font-size: 60px;
+    margin-left: 260px;
+}
+.account form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.account form label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.account form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.account form button {
+    background-color: #007bff;
+    color: white;
+    width: 100px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    margin-left: 280px;
+}
+
+.login-options {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-options p {
+    font-size: 1rem;
+}
+
+.login-options a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+}

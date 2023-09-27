@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login In </title>
+    <link rel="Stylesheet" href="account.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcrypt/5.0.0/bcrypt.min.js"></script>
+</head>
+<body>
+        <div class="navbar" id="navbar">
+          <div class="nav-item">
+            <a class="home" href="http://127.0.0.1:5500/home/home.html">Home</a>
+          </div>
+          <div class="nav-item"> 
+            <a class="acc" href="http://127.0.0.1:5500/Account/account.html">Account</a>
+          </div>
+          <div class="nav-item">
+            <a class="content" href="#">Nepal</a>
+          </div>
+          <div class="nav-item">
+            <a class="more" href="#">More</a>
+          </div>
+        </div>
+
+        <div class="account-body">
+          <div class="account">
+              <span class="Sign">Log in</span>
+              <div class="input-name">
+                <form id="login-form">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required>
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" name="password" required>
+                  <button type="submit">Login</button>
+                </form>
+  
+                  <div class="login-options">
+                      <a href="#">Create Account</a>
+                      <p>Or</p>
+                      <a href="#">Sign in with Google</a>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+<!-- Navbar JS -->
+<script>
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      const scrollY = window.scrollY;
+    
+      if (scrollY > 0) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+</script>
+<!-- Navbar JS end-->
+
+<script>
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    const userData = { email, password };
+    const usersData = JSON.parse(localStorage.getItem('users')) || { users: [] };
+    usersData.users.push(userData);
+    localStorage.setItem('users', JSON.stringify(usersData));
+
+    alert('Login successful! User data saved.');
+  }
+
+  const loginForm = document.getElementById('login-form');
+  loginForm.addEventListener('submit', handleSubmit);
+</script>
+
+
+    
+</body>
+</html>
